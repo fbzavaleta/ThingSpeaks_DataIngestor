@@ -1,6 +1,6 @@
 # ThingSpeaks Data Engine
 
-An data engine to fetch and normalizate data from [ThingSpeaks platform](https://thingspeak.com/) 
+An data engine to fetch and normalize data from [ThingSpeaks platform](https://thingspeak.com/) 
 
 - [Local Setup](#local-setup)
 - [Use the software](#Use-the-software)
@@ -10,7 +10,7 @@ I am using [docker-compose](https://docs.docker.com/compose/) like a container o
 
 First, Install docker and [docker-compose](https://docs.docker.com/compose/install/)  on your OS.
 
-Then modifique the .env like your needs:
+Then modify the .env like your needs:
 ```bash
 cd app
 cp .env_example .env
@@ -18,17 +18,17 @@ cp .env_example .env
 
 For this example, i am using [this](https://thingspeak.com/channels/1350261) public channel about quality air on germany location.
 
-Now, you need to setup your database sql script with the table and fields where is going to store teh data.
+Now, you need to setup your database sql script with the table and fields where is going to store the data.
 
 ```bash
 vim database.sql
 ```
 
-All done, let´s use thye software!!!
+All done, let´s use the software!!!
 
 ## Use the software
 
-Now with the environment ready, we can run the app:
+Now with your environment ready, we can run the app:
 
 ```bash
 docker-compose up
@@ -38,7 +38,7 @@ This will build the engine and execute all the containers for us, to check if al
 ```bash
 docker ps
 ```
-Now you need to check that all the containers have the status Up. The engine will be execute and insert your data to tythe mysql database, you can acess it through thye adminer, just type `http://localhost:8081/` on your browse. The database name is `data_sensors` and the credencials are mysql default `root`
+Now you need to check that all the containers have the status Up. The engine will be execute and insert your data to the mysql database, you can acess it through the adminer, just type `http://localhost:8081/` on your browse. The database name is `data_sensors` and the credencials are mysql default `root`
 
 All done!!
 If you have any doubt or suggestion, please contact me `benjamin.zavaleta@grieletlabs.com`
