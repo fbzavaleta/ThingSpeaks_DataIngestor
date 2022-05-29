@@ -1,4 +1,4 @@
-# MPU-StreamApp
+# ThingSpeaks Data Engine
 
 An data engine to fetch and normalizate data from [ThingSpeaks platform](https://thingspeak.com/) 
 
@@ -38,7 +38,7 @@ This will build the engine and execute all the containers for us, to check if al
 ```bash
 docker ps
 ```
-Now you need to check that all the containers have the status Up. The engine will be execute and insert your data to tythe mysql database, you can acess it through thye adminer, just type `http://localhost:8081/` on your browse. The database name is `data_sensors` ante the credencials are mysql default `root`
+Now you need to check that all the containers have the status Up. The engine will be execute and insert your data to tythe mysql database, you can acess it through thye adminer, just type `http://localhost:8081/` on your browse. The database name is `data_sensors` and the credencials are mysql default `root`
 
 All done!!
 If you have any doubt or suggestion, please contact me `benjamin.zavaleta@grieletlabs.com`
