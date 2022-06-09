@@ -10,6 +10,11 @@ import objects.DataUtils as du
 import objects.DatabaseUtils as db
 import os
 import requests
+import objects.Model as model
+import pandas as pd
+from flask import Flask
+from flask import request
+import numpy as np
 
 load_dotenv()
 
@@ -19,6 +24,7 @@ class ingestor_engine:
         pass
 
     def main(self):
+
         self.__build_databases_tables()
         destinity_table = self.__get_parameters("SQL_MAIN_TABLE")
         data_to_insert = self.generate_dataframe()
@@ -93,3 +99,15 @@ class ingestor_engine:
 
 
 ingestor_engine().main()
+
+
+
+
+# Começando o tratamento dos dados
+data_engine = db.database()
+data = data_engine.select_train_data('air_quality_sensors') 
+
+columns = ["id", "entry_id", "eCO2", "eTVOC", "Temperature", "Air_pressure", "Humidity", "temperature_", "Controller_temperature", "G", "date_creation", "time_float"]
+df = pd.DataFrame(data=data, columns=columns)
+
+print(df.head())
