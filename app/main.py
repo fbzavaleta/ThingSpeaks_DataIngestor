@@ -135,8 +135,6 @@ lr_eTVOC, df_test_eTVOC = modelo_eTVOC.criarModel()
 
 
 
-
-
 #----------------------- forms e plots
 st.write("Selecione o ar que gostaria de prever")
 
