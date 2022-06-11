@@ -1,10 +1,11 @@
 import mysql.connector
 import os
+import pandas as pd
 
 from pandas import DataFrame
 
 par_db = {
-    "host": "172.23.0.1",
+    "host": "172.19.0.2",
     "database": "data_sensors",
     "user": "root",
     "password": "root",
@@ -40,3 +41,25 @@ class database:
         data_rows = cursor_cnxn_msql.fetchall()
 
         return data_rows
+    
+    def select_train_data(self, train_data):
+	    self.query_train = f"SELECT * FROM `{train_data}`"
+	    cursor_cnxn_msql = self.cnx_mysql.cursor()
+        cursor_cnxn_msql.execute(self.query_train)
+	    data = cursor_cnxn_msql.fetchall()
+        columns = [
+            "id",
+            "entry_id",
+            "eCO2",
+            "eTVOC",
+            "Temperature",
+            "Air_pressure",
+            "Humidity",
+            "temperature_",
+            "Controller_temperature",
+            "G",
+            "date_creation",
+            "time_float",]
+        df = pd.Dataframe(data=data, columns=columns)
+	    
+        return df   

@@ -10,6 +10,15 @@ import objects.DataUtils as du
 import objects.DatabaseUtils as db
 import os
 import requests
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import streamlit as st
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn import metrics
+
+
 
 load_dotenv()
 
@@ -93,3 +102,36 @@ class ingestor_engine:
 
 
 ingestor_engine().main()
+
+#------------------------------------------------------------------------------------------------
+
+data_db = db.database()
+data = data_db.select_train_data('air_quality_sensors')
+
+#modelo
+def modelo(X, y):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+    regressor = LinearRegression()
+    regressor.fit(X_train, y_train)
+    y_pred = regressor.predict(X_test)
+    print(regressor.coef_)
+    print(regressor.intercept_)
+    print(regressor.score(X_test, y_test))
+    return regressor
+
+#Rodando para eTVOC-----------------------------------------------
+
+X = data[['Humididty', 'Temperature', 'G', 'Air_pressure']]
+y = data['eTVOC']
+
+modeloeTVOC = modelo(X, y)
+
+#Rodando para eCO2------------------------------------------------
+
+X = data[['Humididty', 'Temperature', 'G', 'Air_pressure']]
+y = data['eCO2']
+
+modeloeC02 = modelo(X, y)
+
+
+
