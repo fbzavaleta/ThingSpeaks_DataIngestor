@@ -33,5 +33,5 @@ services:
     depends_on:
       - db
     ports:
-      - "5000:5000"
+      - "7979:7979"
     restart: always
