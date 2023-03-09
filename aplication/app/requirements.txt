@@ -1,9 +1,0 @@
-scikit-learn
-tensorflow
-sklearn
-pymysql
-numpy
-sqlalchemy
-flask
-pandas
-flask-cors

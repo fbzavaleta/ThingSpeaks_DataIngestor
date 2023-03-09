@@ -1,4 +1,0 @@
-pandas==1.4.1
-mysql-connector-python==8.0.28
-requests==2.27.1
-python-dotenv==0.20.0
