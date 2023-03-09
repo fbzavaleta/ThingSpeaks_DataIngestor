@@ -47,8 +47,6 @@ If you have any doubt or suggestion, please contact me `benjamin.zavaleta@griele
 
 
 
-## Projeto atualizado
+## Acess the web interface
 
-Inicialização com ``` docker-compose up ```
-
-Ao terminar de levantar a estrutura, você pode acessar a aplicação através do link  `http://localhost:9876/`
+You can acess the application copy on your browser the follow url: `http://localhost:9876/`
