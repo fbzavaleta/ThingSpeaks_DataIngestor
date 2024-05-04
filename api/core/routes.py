@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from api.core.enums.http_status import  HttpStatus
 from api.core.response.types import PayloadResponse
-from api.core.lib.utils import TksRequest
+from api.core.lib.utils.util import TksRequest
 
 
 bp = Blueprint('core',__name__)

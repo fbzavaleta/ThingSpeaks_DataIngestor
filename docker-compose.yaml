@@ -29,7 +29,7 @@ services:
 
 # Data engineering app
   app:
-    build: app/
+    build: api/
     depends_on:
       - db
     ports:
